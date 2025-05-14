@@ -24,10 +24,11 @@
     "format": "prettier --write './src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ../../.prettierrc.json",
     "build:widget": "1fe-cli --trace --environment integration build",
     "test": "jest",
-    "type:check": "npx tsc --noEmit --skipLibcheck --pretty"
+    "type:check": "npx tsc --noEmit --skipLibcheck --pretty",
+    "prepack": "yarn build"
   },
   "dependencies": {
-    "@1fe/shell": "workspace:*",
+    "@1fe/shell": "github:docusign/1fe#head=main&workspace=@1fe/shell",
     "@codemirror/lang-javascript": "^6.2.2",
     "@codemirror/view": "6.36.4",
     "@emotion/react": "^11.14.0",
@@ -44,13 +45,13 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@1fe/cli": "0.0.1",
+    "@1fe/cli": "github:docusign/1fe#head=main&workspace=@1fe/cli",
     "@babel/runtime": "7.27.0",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
     "@emotion/jest": "^11.13.0",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
-    "@repo/widget-base-config": "0.0.1",
+    "@repo/widget-base-config": "github:docusign/1fe-sample-widget-base-config",
     "@testing-library/dom": "10.4.0",
     "@testing-library/user-event": "^14.6.1",
     "@types/jest": "^29.5.14",
@@ -109,5 +110,6 @@
         "path": "reports/lint-results.xml"
       }
     ]
-  }
+  },
+  "packageManager": "yarn@4.9.1"
 }
