@@ -1,0 +1,31 @@
+name: Rollback Widget
+
+on:
+  workflow_dispatch:
+    inputs:
+      target-version:
+        description: "The specific version to roll back to (e.g., 1.0.3 or 1.0.3-PR-123.abcde12)"
+        required: true
+        type: string
+      environment:
+        description: "The environment to rollback (e.g., integration or production)"
+        required: true
+        type: choice
+        options:
+          - integration
+          - production
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  rollback-widget:
+    uses: docusign/1fe-ci-cd/.github/workflows/reusable-rollback-ci.yml@main
+    with:
+      target-version: ${{ github.event.inputs.target-version }}
+      environment: ${{ github.event.inputs.environment }}
+      caller-repo: ${{ github.repository }}
+      caller-repo-ref: ${{ github.ref }}
+    secrets:
+      AZURE_APP_CONFIG_CONNECTION_STRING: ${{ secrets.AZURE_APP_CONFIG_CONNECTION_STRING }}
