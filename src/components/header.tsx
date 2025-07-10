@@ -1,15 +1,15 @@
-import styled from '@emotion/styled';
-import { memo, useEffect } from 'react';
-import Hotkeys from 'react-hot-keys';
-import { Button } from 'antd';
+import styled from "@emotion/styled";
+import { memo, useEffect } from "react";
+import Hotkeys from "react-hot-keys";
+import { Button } from "antd";
 
-import { useTranslate } from '../locales';
-import { useAppDispatch, useAppSelector } from '../store';
-import { appActions, selectWidget } from '../store/app';
+import { useTranslate } from "../locales";
+import { useAppDispatch, useAppSelector } from "../store";
+import { appActions, selectWidget } from "../store/app";
 
-import { WidgetSwitcher } from '../components/widgetManager/widgetSwitcher';
-import { Box, Row } from './layout';
-import { WidgetPropEditor } from './widgetManager';
+import { WidgetSwitcher } from "../components/widgetManager/widgetSwitcher";
+import { Box, Row } from "./layout";
+import { WidgetPropEditor } from "./widgetManager";
 
 const HeaderWrapper = styled(Box)`
   // box-shadow: 0px 2px 8px rgba(25, 24, 35, 0.15);
@@ -23,7 +23,7 @@ const AppHeader = memo(() => {
   const t = useTranslate();
 
   useEffect(() => {
-    document.title = widget?.widgetId ?? '@1fe/bathtub';
+    document.title = widget?.widgetId ?? "@1fe/bathtub";
   }, [widget]);
 
   // const onVariantChange: SelectOnChangeHandler = useCallback(
@@ -50,13 +50,13 @@ const AppHeader = memo(() => {
 
       <Row
         css={{
-          gap: '16px',
-          justifyContent: 'flex-end',
-          align: 'center',
+          gap: "16px",
+          justifyContent: "flex-end",
+          align: "center",
         }}
       >
         <Hotkeys
-          keyName='cmd+shift+c'
+          keyName="cmd+shift+c"
           onKeyDown={() => {
             if (widget) {
               navigator.clipboard.writeText(
@@ -68,7 +68,7 @@ const AppHeader = memo(() => {
           }}
         >
           <Hotkeys
-            keyName='cmd+/'
+            keyName="cmd+/"
             onKeyDown={() => {
               dispatch(appActions.setIsWidgetSwitcherOpen(true));
             }}
@@ -76,8 +76,8 @@ const AppHeader = memo(() => {
             <WidgetSwitcher
               trigger={
                 <Button
-                  type='primary'
-                  data-qa='widget-switcher-launch-button'
+                  type="primary"
+                  data-qa="widget-switcher-launch-button"
                   // startElement={
                   //   <span>
                   //     {widget
@@ -92,7 +92,7 @@ const AppHeader = memo(() => {
                     dispatch(appActions.setIsWidgetSwitcherOpen(true));
                   }}
                 >
-                  {t('Bathtub.Header.Waffle')}
+                  {t("Bathtub.Header.Waffle")}
                 </Button>
               }
             />
@@ -100,7 +100,7 @@ const AppHeader = memo(() => {
         </Hotkeys>
 
         <Hotkeys
-          keyName='cmd+p'
+          keyName="cmd+p"
           onKeyDown={(_, event) => {
             event.preventDefault();
             event.stopImmediatePropagation();
@@ -110,13 +110,13 @@ const AppHeader = memo(() => {
           <WidgetPropEditor
             trigger={
               <Button
-                type='primary'
-                data-qa='widget-prop-editor-button'
+                type="primary"
+                data-qa="widget-prop-editor-button"
                 onClick={() => {
                   dispatch(appActions.setIsPropsEditorOpen(true));
                 }}
               >
-                {t('Bathtub.Header.Editor')}
+                {t("Bathtub.Header.Editor")}
               </Button>
             }
           />
@@ -137,24 +137,26 @@ const AppHeader = memo(() => {
               </Select>
             ) : null} */}
         <Button
-          type='primary'
+          type="primary"
           onClick={() => {
             dispatch(appActions.reset());
           }}
         >
-          {t('Bathtub.Header.Reset')}
+          {t("Bathtub.Header.Reset")}
         </Button>
         <Button
-          type='primary'
+          type="primary"
           onClick={() => {
             dispatch(appActions.renderWidget());
           }}
         >
-          {t('Bathtub.Header.Render')}
+          {t("Bathtub.Header.Render")}
         </Button>
       </Row>
     </HeaderWrapper>
   );
 });
+
+AppHeader.displayName = "AppHeader";
 
 export { AppHeader };

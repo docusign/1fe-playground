@@ -1,9 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
+import { configureStore } from "@reduxjs/toolkit";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
-import { widgetBrowserReducer } from '../store/widgetBrowser';
+import { widgetBrowserReducer } from "../store/widgetBrowser";
 
-import { appReducer } from './app';
+import { appReducer } from "./app";
 
 export const store = configureStore({
   reducer: {
@@ -21,4 +21,4 @@ export const useAppDispatch: () => AppDispatch = useDispatch;
 
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
-export { createShallowSelector } from './utils';
+export { createShallowSelector } from "./utils";

@@ -26,7 +26,7 @@ const getType = (error: Error | unknown): string => {
       }
     }
   }
-  return 'Error';
+  return "Error";
 };
 
 const parseStack = (
@@ -56,9 +56,9 @@ const parseStack = (
     }
   }
   return {
-    file: '',
-    location: '',
-    widget: '',
+    file: "",
+    location: "",
+    widget: "",
   };
 };
 
@@ -71,6 +71,6 @@ export const parseError = (error: unknown): ParsedError => {
     file: file,
     location: location,
     widget,
-    stack: error instanceof Error ? (error.stack ?? '') : '',
+    stack: error instanceof Error ? (error.stack ?? "") : "",
   };
 };

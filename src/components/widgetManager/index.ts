@@ -1,2 +1,2 @@
-export * from './widgetPropEditor';
-export * from './widgetRenderer';
+export * from "./widgetPropEditor";
+export * from "./widgetRenderer";

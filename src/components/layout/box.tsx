@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 type BoxProps = {
   margin?: string;
@@ -10,9 +10,9 @@ type BoxProps = {
   maxWidth?: string;
   maxHeight?: string;
   overflow?: string;
-  position?: 'relative' | 'absolute' | 'fixed' | 'sticky';
+  position?: "relative" | "absolute" | "fixed" | "sticky";
   border?: string;
-  ['data-qa']?: string;
+  ["data-qa"]?: string;
 };
 
 const Box = styled.div`
@@ -27,15 +27,15 @@ const Box = styled.div`
   overflow: ${(props: BoxProps) => props.overflow};
   position: ${(props: BoxProps) => props.position};
   border: ${(props: BoxProps) => props.border};
-  ${(props: BoxProps) => props['data-qa'] && `data-qa=${props['data-qa']}`};
+  ${(props: BoxProps) => props["data-qa"] && `data-qa=${props["data-qa"]}`};
 `;
 
 const Center = styled(Box)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: ${(props: BoxProps) => props.width ?? '100%'};
-  height: ${(props: BoxProps) => props.height ?? '100%'};
+  width: ${(props: BoxProps) => props.width ?? "100%"};
+  height: ${(props: BoxProps) => props.height ?? "100%"};
 `;
 
 export { Box, Center, type BoxProps };

@@ -1,7 +1,7 @@
-import { EntityState } from '@reduxjs/toolkit';
+import { EntityState } from "@reduxjs/toolkit";
 
-import { Environment } from '../../services/cdn';
-import { Widget } from '../../services/widget';
+import { Environment } from "../../services/cdn";
+import { Widget } from "../../services/widget";
 
 type AppState = EntityState<Widget> & {
   activeWidgetProps: string;

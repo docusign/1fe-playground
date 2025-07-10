@@ -1,6 +1,6 @@
-import { z } from 'zod';
+import { z } from "zod";
 
-import { Environment } from './cdn';
+import { Environment } from "./cdn";
 
 const Package = z.object({
   id: z.string(),
@@ -88,19 +88,19 @@ const WidgetVersionData = z.object({
 export type WidgetVersionData = z.infer<typeof WidgetVersionData>;
 
 const EnvironmentUrls: Record<Environment, string> = {
-  development: 'http://localhost:8080',
-  integration: 'https://apps.dev.docusign.net',
-  stage: 'https://apps-s.docusign.com',
-  demo: 'https://apps-d.docusign.com',
-  production: 'https://apps.docusign.com',
+  development: "http://localhost:8080",
+  integration: "https://apps.dev.docusign.net",
+  stage: "https://apps-s.docusign.com",
+  demo: "https://apps-d.docusign.com",
+  production: "https://apps.docusign.com",
 };
 
 export const downloadWidgetVersions = async (): Promise<WidgetVersionData> => {
   try {
     const res = await (
-      await fetch(`${EnvironmentUrls['integration']}/version`, {
+      await fetch(`${EnvironmentUrls["integration"]}/version`, {
         // TODO
-        method: 'GET',
+        method: "GET",
       })
     ).json();
 
