@@ -431,10 +431,19 @@ const translations = {
 
 // criminal
 export const useTranslate = () => {
-  return (key: `${string}.${string}.${string}`): string => {
+  return (key: `${string}.${string}.${string}`, params?: Record<string, string>): string => {
     const resource = key
       .split(".")
       .reduce((o, k) => (o as any)?.[k], translations);
-    return (resource as any).translation;
+    let translation = (resource as any).translation;
+    
+    // Handle template variable replacement
+    if (params) {
+      Object.entries(params).forEach(([paramKey, paramValue]) => {
+        translation = translation.replace(new RegExp(`{{${paramKey}}}`, 'g'), paramValue);
+      });
+    }
+    
+    return translation;
   };
 };
