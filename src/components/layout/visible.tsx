@@ -1,3 +1,5 @@
+import React from "react";
+
 type VisibleProps = {
   then: React.ReactNode;
   else?: React.ReactNode;

@@ -1,8 +1,8 @@
-import { memo, useEffect, useMemo } from "react";
+import React, { memo, useMemo } from "react";
 
 import { ErrorOverlay } from "../../components/errorOverlay";
 import { WidgetProps } from "../../contract";
-import { useAppDispatch, useAppSelector } from "../../store";
+import { useAppSelector } from "../../store";
 import {
   selectActiveWidgetProps,
   selectActiveWidgetUrl,
@@ -26,7 +26,6 @@ const safeParseProps = (widgetProps: string) => {
 };
 
 const WidgetRenderer: React.FC<WidgetProps> = memo(({ platform }) => {
-  const dispatch = useAppDispatch();
   const widgetUrl = useAppSelector(selectActiveWidgetUrl);
   const widgetProps = useAppSelector(selectActiveWidgetProps);
   const widgetRefresh = useAppSelector(selectWidgetRefreshSignal);
@@ -50,7 +49,7 @@ const WidgetRenderer: React.FC<WidgetProps> = memo(({ platform }) => {
     //     ? undefined
     //     : { variantId: widgetVariant };
     return (platform.utils.widgets as any).getByUrl(widgetUrl);
-  }, [widgetUrl, widgetRefresh]);
+  }, [widgetUrl, widgetRefresh, platform.utils.widgets]);
 
   const widgetPropsToPass = safeParseProps(widgetProps);
 

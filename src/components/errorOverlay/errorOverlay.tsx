@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "@emotion/styled";
 import { ErrorBoundary, FallbackProps } from "react-error-boundary";
 import Hotkeys from "react-hot-keys";

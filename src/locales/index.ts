@@ -431,10 +431,7 @@ const translations = {
 
 // criminal
 export const useTranslate = () => {
-  return (
-    key: `${string}.${string}.${string}`,
-    options?: Record<string, string>,
-  ): string => {
+  return (key: `${string}.${string}.${string}`): string => {
     const resource = key
       .split(".")
       .reduce((o, k) => (o as any)?.[k], translations);

@@ -13,7 +13,7 @@ const getWidgetsFromVersionEndpoint = async () => {
 
 const loadWidgets = createAsyncThunk(
   "app/refreshWidgets",
-  async (_, { dispatch }) => {
+  async () => {
     try {
       // const widgets = getWidgets();
       const widgets = await getWidgetsFromVersionEndpoint();

@@ -1,4 +1,4 @@
-import { memo, useState } from "react";
+import React, { memo, useState } from "react";
 import Hotkeys from "react-hot-keys";
 import { Modal, Typography, Button, Input } from "antd";
 

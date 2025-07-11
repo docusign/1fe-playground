@@ -1,6 +1,5 @@
 import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
 
-import { RootState } from "..";
 import { selectAllWidgets } from "../app/selectors";
 // import {
 //   getFilterBarConfiguration,
@@ -68,7 +67,7 @@ const widgetBrowserSlice = createSlice({
   },
 });
 
-const selectWidgetBrowser = (state: RootState) => state.widgetBrowser;
+// const selectWidgetBrowser = (state: RootState) => state.widgetBrowser;
 
 // const selectFilterBarConfiguration = createSelector(
 //   selectWidgetBrowser,

@@ -1,8 +1,3 @@
-import { z } from "zod";
-
-import { Environment, getWidgetCdnUrl } from "./cdn";
-import { downloadWidgetVersions, PluginAuth } from "./version";
-
 // const WidgetBundle = WidgetEnvironmentActivity.extend({
 //   bundleUrl: z.string().url().optional(),
 //   configUrl: z.string().url(),

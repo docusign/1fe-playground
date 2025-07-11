@@ -1,11 +1,9 @@
+import React, { memo, useEffect } from "react";
 import styled from "@emotion/styled";
-import { memo, useEffect } from "react";
 
 import { WidgetProps } from "../contract";
 import { useAppDispatch, useAppSelector } from "../store";
-import { selectActiveWidgetUrl, selectLoadingOrError } from "../store/app";
-
-import { useTranslate } from "../locales";
+import { selectActiveWidgetUrl } from "../store/app";
 import { AppHeader } from "./header";
 import { Box } from "./layout";
 import { WidgetRenderer } from "./widgetManager";
@@ -31,9 +29,7 @@ const Content = styled.main`
 `;
 
 const WidgetInner: React.FC<WidgetProps> = memo((props) => {
-  const { isLoading, error } = useAppSelector(selectLoadingOrError);
   const widgetUrl = useAppSelector(selectActiveWidgetUrl);
-  const t = useTranslate();
   const dispatch = useAppDispatch();
 
   useEffect(() => {

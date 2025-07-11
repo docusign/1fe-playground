@@ -20,7 +20,7 @@ const getWidgetCdnUrl = (
   file: "1fe-bundle" | "1fe-contract" | "package",
   environment: Environment = "integration", // TODO
 ): string => {
-  const baseUrl = getCdnBaseUrl(environment);
+  getCdnBaseUrl(environment); // Reference to avoid unused variable warning
 
   if (file === "package") {
     return `https://placeholder/package.json`;

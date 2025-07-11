@@ -3,7 +3,6 @@ import { Button } from "antd";
 
 import { useAppDispatch } from "../../store";
 import { appActions } from "../../store/app";
-import { platformProps } from "@1fe/shell";
 
 type QuickLinksProps = {
   port: string;
@@ -11,7 +10,6 @@ type QuickLinksProps = {
 
 const QuickLinksComponent = ({ port }: QuickLinksProps) => {
   const dispatch = useAppDispatch();
-  const Sk = platformProps.utils.widgets.get("@1fe/starter-kit");
   return (
     <Button
       onClick={() =>

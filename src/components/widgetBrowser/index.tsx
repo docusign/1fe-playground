@@ -62,7 +62,6 @@
 
 // export { WidgetBrowser };
 
-import { useState, useEffect } from "react";
 import { Table, Typography } from "antd";
 import { useAppSelector } from "../../store";
 import { widgetBrowserSelectors } from "../../store/widgetBrowser";

@@ -1,9 +1,8 @@
+import React, { memo, useEffect, useRef } from "react";
 import { javascript } from "@codemirror/lang-javascript";
 import CodeMirror from "@uiw/react-codemirror";
-import { memo, useEffect, useRef } from "react";
 import Hotkeys from "react-hot-keys";
 import { Button, Typography, Flex, Modal } from "antd";
-import styled from "@emotion/styled";
 
 import { useTranslate } from "../../locales";
 import {
