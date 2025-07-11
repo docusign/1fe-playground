@@ -1,5 +1,7 @@
 // TODO: Re-enable BT unit tests @luke
-test('temp placeholder', () => {});
+import { test } from "@jest/globals";
+
+test("temp placeholder", () => {});
 
 // import { render, screen } from '@testing-library/react';
 // import userEvent from '@testing-library/user-event';

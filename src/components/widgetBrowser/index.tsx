@@ -62,35 +62,34 @@
 
 // export { WidgetBrowser };
 
-import { useState, useEffect } from 'react';
-import { Table, Typography } from 'antd';
-import { useAppSelector } from '../../store';
-import { widgetBrowserSelectors } from '../../store/widgetBrowser';
+import { Table, Typography } from "antd";
+import { useAppSelector } from "../../store";
+import { widgetBrowserSelectors } from "../../store/widgetBrowser";
 
 export function WidgetBrowser() {
   const widgets = useAppSelector(widgetBrowserSelectors.selectFilteredWidgets);
 
   const columns = [
     {
-      title: 'Widget ID',
-      dataIndex: 'widgetId',
-      key: 'widgetId',
+      title: "Widget ID",
+      dataIndex: "widgetId",
+      key: "widgetId",
     },
     {
-      title: 'Route',
-      dataIndex: ['plugin', 'route'],
-      key: 'route',
+      title: "Route",
+      dataIndex: ["plugin", "route"],
+      key: "route",
     },
     {
-      title: 'Version',
-      dataIndex: 'version',
-      key: 'version',
+      title: "Version",
+      dataIndex: "version",
+      key: "version",
     },
     {
-      title: 'Has Auth',
-      dataIndex: ['plugin', 'auth'],
-      key: 'auth',
-      render: (auth) => (auth ? 'true' : 'false'),
+      title: "Has Auth",
+      dataIndex: ["plugin", "auth"],
+      key: "auth",
+      render: (auth: boolean) => (auth ? "true" : "false"),
     },
   ];
 
@@ -100,8 +99,8 @@ export function WidgetBrowser() {
       <Table
         dataSource={widgets}
         columns={columns}
-        rowKey='widgetId'
-        locale={{ emptyText: 'No widget configuration found.' }}
+        rowKey="widgetId"
+        locale={{ emptyText: "No widget configuration found." }}
       />
     </div>
   );

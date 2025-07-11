@@ -1,7 +1,8 @@
-import { propsValidation } from '../store/utils';
+import { propsValidation } from "../store/utils";
+import { expect, describe, test } from "@jest/globals";
 
-describe('WidgetProps propsValidation', () => {
-  test('Accepts Valid Props', () => {
+describe("WidgetProps propsValidation", () => {
+  test("Accepts Valid Props", () => {
     expect(
       propsValidation(
         `{"kitchenSink": "testing","anotherKey":  () => Promise.resolve("test"),anotherKey: 'valid'}`,
@@ -13,7 +14,7 @@ describe('WidgetProps propsValidation', () => {
     ).toBeTruthy();
   });
 
-  test('Rejects Invalid Props', () => {
+  test("Rejects Invalid Props", () => {
     expect(
       propsValidation(
         `{"kitchenSink": "testing""anotherKey":  () => Promise.resolve('test')anotherKey: 'invalid'}`,

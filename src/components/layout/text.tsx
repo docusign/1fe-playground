@@ -1,11 +1,11 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 type TextProps = {
   margin?: string;
   padding?: string;
   overflow?: string;
   color?: string;
-  ['data-qa']?: string;
+  ["data-qa"]?: string;
 };
 
 const Text = styled.div`
@@ -13,7 +13,7 @@ const Text = styled.div`
   padding: ${(props: TextProps) => props.padding ?? 0};
   overflow: ${(props: TextProps) => props.overflow};
   color: ${(props: TextProps) => props.color};
-  ${(props: TextProps) => props['data-qa'] && `data-qa=${props['data-qa']}`};
+  ${(props: TextProps) => props["data-qa"] && `data-qa=${props["data-qa"]}`};
 `;
 
 export { Text, type TextProps };

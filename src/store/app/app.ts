@@ -2,18 +2,18 @@ import {
   PayloadAction,
   createEntityAdapter,
   createSlice,
-} from '@reduxjs/toolkit';
-import serialize from 'serialize-javascript';
+} from "@reduxjs/toolkit";
+import serialize from "serialize-javascript";
 
-import { Widget } from '../../services/widget';
-import { appThunks } from '../../store/app/thunks';
-import { propsValidation } from '../../store/utils';
+import { Widget } from "../../services/widget";
+import { appThunks } from "../../store/app/thunks";
+import { propsValidation } from "../../store/utils";
 
-import { AppState } from './types';
+import { AppState } from "./types";
 
-const STORAGE_KEY = 'bathtub';
-const WIDGET_URL_KEY = 'url';
-const WIDGET_PROPS_KEY = 'props';
+const STORAGE_KEY = "bathtub";
+const WIDGET_URL_KEY = "url";
+const WIDGET_PROPS_KEY = "props";
 
 const widgetsAdapter = createEntityAdapter<Widget>({
   selectId: (entity) => entity.widgetId,
@@ -26,20 +26,20 @@ const initialState: AppState = widgetsAdapter.getInitialState({
   activeWidgetUrl: undefined,
   activeWidgetProps: serialize(
     {
-      kitchenSink: 'testing',
+      kitchenSink: "testing",
     },
     { unsafe: true, space: 2 },
   ),
   isPropsEditorOpen: false,
   tickTock: false,
   isWidgetSwitcherOpen: false,
-  environment: 'integration' as any, // TODO
+  environment: "integration" as any, // TODO
   hasPropsError: false,
 });
 
 const appStateSlice = createSlice({
   initialState,
-  name: 'app',
+  name: "app",
   reducers: {
     setActiveWidgetUrl: (state, action: PayloadAction<string>) => {
       state.activeWidgetUrl = action.payload;

@@ -1,13 +1,13 @@
-import { memo, useEffect, useMemo } from 'react';
+import React, { memo, useMemo } from "react";
 
-import { ErrorOverlay } from '../../components/errorOverlay';
-import { WidgetProps } from '../../contract';
-import { useAppDispatch, useAppSelector } from '../../store';
+import { ErrorOverlay } from "../../components/errorOverlay";
+import { WidgetProps } from "../../contract";
+import { useAppSelector } from "../../store";
 import {
   selectActiveWidgetProps,
   selectActiveWidgetUrl,
   selectWidgetRefreshSignal,
-} from '../../store/app';
+} from "../../store/app";
 // import {
 //   DEFAULT_VARIANT,
 //   widgetBrowserActions,
@@ -17,16 +17,15 @@ import {
 
 const safeParseProps = (widgetProps: string) => {
   try {
-    return eval('(' + widgetProps + ')');
+    return eval("(" + widgetProps + ")");
   } catch (e) {
     return {
-      kitchenSink: 'testing',
+      kitchenSink: "testing",
     };
   }
 };
 
 const WidgetRenderer: React.FC<WidgetProps> = memo(({ platform }) => {
-  const dispatch = useAppDispatch();
   const widgetUrl = useAppSelector(selectActiveWidgetUrl);
   const widgetProps = useAppSelector(selectActiveWidgetProps);
   const widgetRefresh = useAppSelector(selectWidgetRefreshSignal);
@@ -49,9 +48,8 @@ const WidgetRenderer: React.FC<WidgetProps> = memo(({ platform }) => {
     //   widgetVariant === DEFAULT_VARIANT
     //     ? undefined
     //     : { variantId: widgetVariant };
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- we intentionally use `any` here, since we are using the `getByUrl` method from the `widgets` object, which is not available to all widgets and is hidden.
     return (platform.utils.widgets as any).getByUrl(widgetUrl);
-  }, [widgetUrl, widgetRefresh]);
+  }, [widgetUrl, widgetRefresh, platform.utils.widgets]);
 
   const widgetPropsToPass = safeParseProps(widgetProps);
 
@@ -61,5 +59,7 @@ const WidgetRenderer: React.FC<WidgetProps> = memo(({ platform }) => {
     </ErrorOverlay>
   );
 });
+
+WidgetRenderer.displayName = "WidgetRenderer";
 
 export { WidgetRenderer };

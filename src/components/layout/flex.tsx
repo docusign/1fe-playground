@@ -1,16 +1,16 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
-import { Box, BoxProps } from './box';
+import { Box, BoxProps } from "./box";
 
 type Justify =
-  | 'center'
-  | 'flex-start'
-  | 'flex-end'
-  | 'space-between'
-  | 'space-around'
-  | 'space-evenly';
+  | "center"
+  | "flex-start"
+  | "flex-end"
+  | "space-between"
+  | "space-around"
+  | "space-evenly";
 
-type Align = 'center' | 'flex-start' | 'flex-end' | 'stretch' | 'baseline';
+type Align = "center" | "flex-start" | "flex-end" | "stretch" | "baseline";
 
 type FlexProps = BoxProps & {
   justify?: Justify;
@@ -21,9 +21,9 @@ type FlexProps = BoxProps & {
 const Flex = styled(Box)`
   justify-self: ${(props: FlexProps) => props.justify};
   align-self: ${(props: FlexProps) => props.align};
-  flex: ${(props: FlexProps) => props.flex ?? '1'};
-  width: ${(props: ColumnProps) => props.width ?? '100%'};
-  height: ${(props: ColumnProps) => props.height ?? '100%'};
+  flex: ${(props: FlexProps) => props.flex ?? "1"};
+  width: ${(props: ColumnProps) => props.width ?? "100%"};
+  height: ${(props: ColumnProps) => props.height ?? "100%"};
 `;
 
 const withFlex = <T,>(Component: T): T & { Flex: typeof Flex } => {
@@ -45,8 +45,8 @@ const Row = withFlex(styled(Box)`
   align-items: ${(props: RowProps) => props.align};
   gap: ${(props: RowProps) => props.gap};
   flex-wrap: ${(props: RowProps) => props.wrap};
-  width: ${(props: ColumnProps) => props.width ?? '100%'};
-  height: ${(props: ColumnProps) => props.height ?? '100%'};
+  width: ${(props: ColumnProps) => props.width ?? "100%"};
+  height: ${(props: ColumnProps) => props.height ?? "100%"};
 `);
 
 type ColumnProps = BoxProps & {
@@ -61,8 +61,8 @@ const Column = withFlex(styled(Box)`
   justify-content: ${(props: ColumnProps) => props.justify};
   align-items: ${(props: ColumnProps) => props.align};
   gap: ${(props: ColumnProps) => props.gap};
-  width: ${(props: ColumnProps) => props.width ?? '100%'};
-  height: ${(props: ColumnProps) => props.height ?? '100%'};
+  width: ${(props: ColumnProps) => props.width ?? "100%"};
+  height: ${(props: ColumnProps) => props.height ?? "100%"};
 `);
 
 export { Column, Row };

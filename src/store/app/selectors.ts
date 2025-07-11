@@ -1,9 +1,9 @@
-import { createSelector } from '@reduxjs/toolkit';
+import { createSelector } from "@reduxjs/toolkit";
 
-import { Environment } from '../../services/cdn';
-import { RootState } from '../../store/index';
+import { Environment } from "../../services/cdn";
+import { RootState } from "../../store/index";
 
-import { widgetsAdapter } from './app';
+import { widgetsAdapter } from "./app";
 
 const selectApp = (state: RootState) => state.app;
 
@@ -32,7 +32,7 @@ const selectAllPlugins = createSelector(selectAllWidgets, (widgets) =>
 );
 
 const selectWidget = (state: RootState) =>
-  selectWidgetById(selectApp(state), selectApp(state).activeWidgetUrl ?? '');
+  selectWidgetById(selectApp(state), selectApp(state).activeWidgetUrl ?? "");
 
 const selectEnvironment = (state: RootState) =>
   selectApp(state).environment as Environment;

@@ -1,3 +1,5 @@
+import React from "react";
+
 type VisibleProps = {
   then: React.ReactNode;
   else?: React.ReactNode;
@@ -10,7 +12,7 @@ export const Visible: React.FC<VisibleProps> = ({
   then,
   else: fallback,
 }) => {
-  if (!!test) {
+  if (test) {
     return <>{then}</>;
   }
   return fallback ? <>{fallback}</> : null;

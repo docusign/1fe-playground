@@ -1,7 +1,6 @@
-import { PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
 
-import { RootState } from '..';
-import { selectAllWidgets } from '../app/selectors';
+import { selectAllWidgets } from "../app/selectors";
 // import {
 //   getFilterBarConfiguration,
 //   searchAndFilterWidgets,
@@ -14,7 +13,7 @@ type WidgetBrowserState = {
   // pickedVariant: string;
 };
 
-export const DEFAULT_VARIANT = 'default';
+export const DEFAULT_VARIANT = "default";
 
 const initialState: WidgetBrowserState = {
   filters: [],
@@ -29,7 +28,7 @@ const initialState: WidgetBrowserState = {
 
 const widgetBrowserSlice = createSlice({
   initialState,
-  name: 'widgetBrowser',
+  name: "widgetBrowser",
   reducers: {
     // applySearch(state, action: PayloadAction<string>) {
     //   state.searchOptions.appliedSearch = action.payload;
@@ -68,7 +67,7 @@ const widgetBrowserSlice = createSlice({
   },
 });
 
-const selectWidgetBrowser = (state: RootState) => state.widgetBrowser;
+// const selectWidgetBrowser = (state: RootState) => state.widgetBrowser;
 
 // const selectFilterBarConfiguration = createSelector(
 //   selectWidgetBrowser,

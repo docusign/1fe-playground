@@ -1,0 +1,7 @@
+dist/
+node_modules/
+coverage/
+reports/
+test-results/
+playwright-report/
+*.d.ts

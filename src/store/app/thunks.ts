@@ -1,19 +1,19 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import { WIDGET, WIDGET_ID, WIDGET_URL } from '../../constants';
-import { Widget } from '../../services/widget';
+import { WIDGET, WIDGET_ID, WIDGET_URL } from "../../constants";
+import { Widget } from "../../services/widget";
 // import { getWidgets } from '../../services/widget';
 // import { widgetBrowserActions } from '../../store/widgetBrowser';
 
 const getWidgetsFromVersionEndpoint = async () => {
-  const response = await fetch('/version');
+  const response = await fetch("/version");
   const widgets = (await response.json()).configs.widgetConfig as Widget[];
   return widgets;
 };
 
 const loadWidgets = createAsyncThunk(
-  'app/refreshWidgets',
-  async (_, { dispatch }) => {
+  "app/refreshWidgets",
+  async () => {
     try {
       // const widgets = getWidgets();
       const widgets = await getWidgetsFromVersionEndpoint();
