@@ -90,7 +90,7 @@ export function WidgetBrowser() {
       title: "Has Auth",
       dataIndex: ["plugin", "auth"],
       key: "auth",
-      render: (auth) => (auth ? "true" : "false"),
+      render: (auth: boolean) => (auth ? "true" : "false"),
     },
   ];
 

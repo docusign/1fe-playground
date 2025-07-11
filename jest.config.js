@@ -2,7 +2,9 @@ module.exports = {
   testEnvironment: "jsdom",
   setupFilesAfterEnv: ["<rootDir>/src/jestSetup.ts"],
   transform: {
-    "^.+\\.tsx?$": "ts-jest", // Use ts-jest for TypeScript files
+    "^.+\\.tsx?$": ["ts-jest", {
+      tsconfig: "tsconfig.test.json"
+    }], // Use ts-jest for TypeScript files with test config
   },
   moduleFileExtensions: ["js", "jsx", "ts", "tsx"],
   testMatch: [
