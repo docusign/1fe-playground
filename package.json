@@ -24,6 +24,9 @@
     "format": "prettier --write './src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ../../.prettierrc.json",
     "build:widget": "1fe-cli --trace --environment integration build",
     "test": "jest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
     "type:check": "npx tsc --noEmit --skipLibcheck --pretty",
     "prepack": "yarn build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0  && echo ✔ Lint passed!"
@@ -54,6 +57,7 @@
     "@commitlint/config-conventional": "^17.8.1",
     "@emotion/jest": "^11.13.0",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
+    "@playwright/test": "^1.54.1",
     "@repo/widget-base-config": "git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#head=main",
     "@testing-library/dom": "10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
