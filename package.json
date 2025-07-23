@@ -1,6 +1,6 @@
 {
   "name": "@1fe/bathtub",
-  "version": "1.0.49",
+  "version": "1.0.50",
   "license": "UNLICENSED",
   "description": "Widget Starter kit for 1FE Platform.",
   "author": "",
@@ -32,8 +32,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0  && echo ✔ Lint passed!"
   },
   "dependencies": {
-    "@1fe/eslint-config": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/eslint-config",
-    "@1fe/shell": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/shell",
+    "@1fe/shell": "0.0.1",
     "@codemirror/lang-javascript": "^6.2.2",
     "@codemirror/view": "6.36.4",
     "@emotion/react": "^11.14.0",
@@ -51,14 +50,14 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@1fe/cli": "git+ssh://git@github.com/docusign/1fe.git#head=main&workspace=@1fe/cli",
+    "@1fe/cli": "0.0.1",
+    "@1fe/sample-widget-base-config": "0.0.1",
     "@babel/runtime": "7.27.0",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
     "@emotion/jest": "^11.13.0",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.4.1",
     "@playwright/test": "^1.54.1",
-    "@repo/widget-base-config": "git+ssh://git@github.com/docusign/1fe-sample-widget-base-config.git#head=main",
     "@testing-library/dom": "10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
