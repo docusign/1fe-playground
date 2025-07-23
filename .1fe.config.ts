@@ -1,11 +1,11 @@
-import { OneFeRuntimeConfigObject, TypedOneFeConfiguration } from '@1fe/cli';
-import { Environments, getBaseConfig } from '@repo/widget-base-config'; // this is the redistributed package for the organization
+import { OneFeRuntimeConfigObject, TypedOneFeConfiguration } from "@1fe/cli";
+import { Environments, getBaseConfig } from "@1fe/sample-widget-base-config"; // this is the redistributed package for the organization
 
 const commonRuntimeConfig: OneFeRuntimeConfigObject = {
   dependsOn: {
     widgets: [
       {
-        widgetId: '@1fe/starter-kit',
+        widgetId: "@1fe/widget-starter-kit",
       },
     ],
   },
