@@ -39,7 +39,7 @@ const WidgetInner: React.FC<WidgetProps> = memo((props) => {
   // if (isLoading) {
   //   return (
   //     <Center>
-  //       {/* <ProgressCircle text={t('Bathtub.App.Loading')} size='medium' /> */}
+  //       {/* <ProgressCircle text={t('Playground.App.Loading')} size='medium' /> */}
   //       Loading...
   //     </Center>
   //   );

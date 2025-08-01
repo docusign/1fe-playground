@@ -1,8 +1,8 @@
 {
-  "name": "@1fe/bathtub",
-  "version": "1.0.50",
+  "name": "@1fe/playground",
+  "version": "0.1.0",
   "license": "UNLICENSED",
-  "description": "Widget Starter kit for 1FE Platform.",
+  "description": "1fe playground plugin",
   "author": "",
   "repository": {
     "type": "git",

@@ -11,7 +11,7 @@ import { propsValidation } from "../../store/utils";
 
 import { AppState } from "./types";
 
-const STORAGE_KEY = "bathtub";
+const STORAGE_KEY = "playground";
 const WIDGET_URL_KEY = "url";
 const WIDGET_PROPS_KEY = "props";
 

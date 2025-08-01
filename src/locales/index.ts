@@ -70,7 +70,7 @@
 // };
 
 const translations = {
-  Bathtub: {
+  Playground: {
     Header: {
       SkipLink: {
         translation: "Skip to main",
@@ -141,12 +141,12 @@ const translations = {
         instruction: "Title of the help message",
       },
       HelpHeader: {
-        translation: "Welcome to 1FE Bathtub!",
+        translation: "Welcome to 1FE Playground!",
         instruction: "Header of the help message",
       },
       HelpFailed: {
         translation:
-          "We tried loading the widget and failed. Press the CLEAN button to reset the bathtub.",
+          "We tried loading the widget and failed. Press the CLEAN button to reset the playground.",
         instruction: "Message when the widget fails to load",
       },
       HelpFailedHeader: {
@@ -155,7 +155,7 @@ const translations = {
       },
       HelpFailedAction: {
         translation: "Clean",
-        instruction: "Button to clean the bathtub",
+        instruction: "Button to clean the playground",
       },
       HelpFailureLocation: {
         translation: "{{WIDGET}}:{{LOCATION}}",
@@ -244,11 +244,11 @@ const translations = {
       },
       Clean: {
         translation: "Clean (on error)",
-        instruction: "Button to clean the bathtub",
+        instruction: "Button to clean the playground",
       },
       CleanShortcut: {
         translation: "CMD+ESC",
-        instruction: "Shortcut to clean the bathtub",
+        instruction: "Shortcut to clean the playground",
       },
     },
   },
@@ -366,9 +366,9 @@ const translations = {
         translation: "Configuration",
         instruction: "Link to the widget configuration",
       },
-      Bathtub: {
+      Playground: {
         translation: "Launch {{widget_name}}",
-        instruction: "Link to the widget in the bathtub",
+        instruction: "Link to the widget in the playground",
       },
       Version: {
         translation: "{{version_number}} - {{widget_name}}",

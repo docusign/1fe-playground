@@ -23,7 +23,7 @@ const AppHeader = memo(() => {
   const t = useTranslate();
 
   useEffect(() => {
-    document.title = widget?.widgetId ?? "@1fe/bathtub";
+    document.title = widget?.widgetId ?? "@1fe/playground";
   }, [widget]);
 
   // const onVariantChange: SelectOnChangeHandler = useCallback(
@@ -37,8 +37,8 @@ const AppHeader = memo(() => {
     <HeaderWrapper>
       {/* <Header
         fullWidth
-        skipNavTarget='/bathtub#main'
-        skipNavText={t('Bathtub.Header.SkipLink')}
+        skipNavTarget='/playground#main'
+        skipNavText={t('Playground.Header.SkipLink')}
       > */}
       {/* <Header.Start> */}
       {/* <Row
@@ -60,7 +60,7 @@ const AppHeader = memo(() => {
           onKeyDown={() => {
             if (widget) {
               navigator.clipboard.writeText(
-                `https://apps.dev.docusign.net/bathtub/?widget=${widget.widgetId}`,
+                `https://apps.dev.docusign.net/playground/?widget=${widget.widgetId}`,
               );
             } else {
               navigator.clipboard.writeText(window.location.href);
@@ -85,14 +85,14 @@ const AppHeader = memo(() => {
                   //           widget.lastModified.integration?.widgetVersion ??
                   //           'unknown'
                   //         }`
-                  //       : '@1fe/bathtub'}
+                  //       : '@1fe/playground'}
                   //   </span>
                   // }
                   onClick={() => {
                     dispatch(appActions.setIsWidgetSwitcherOpen(true));
                   }}
                 >
-                  {t("Bathtub.Header.Waffle")}
+                  {t("Playground.Header.Waffle")}
                 </Button>
               }
             />
@@ -116,19 +116,19 @@ const AppHeader = memo(() => {
                   dispatch(appActions.setIsPropsEditorOpen(true));
                 }}
               >
-                {t("Bathtub.Header.Editor")}
+                {t("Playground.Header.Editor")}
               </Button>
             }
           />
         </Hotkeys>
         {/* {variants?.length ? (
               <Select
-                label={t('Bathtub.Header.Variant')}
+                label={t('Playground.Header.Variant')}
                 onChange={onVariantChange}
                 data-qa='widget-variant-select'
               >
                 <Select.Option
-                  text={t('Bathtub.Header.VariantDefault')}
+                  text={t('Playground.Header.VariantDefault')}
                   value={DEFAULT_VARIANT}
                 />
                 {variants.map((variant) => (
@@ -142,7 +142,7 @@ const AppHeader = memo(() => {
             dispatch(appActions.reset());
           }}
         >
-          {t("Bathtub.Header.Reset")}
+          {t("Playground.Header.Reset")}
         </Button>
         <Button
           type="primary"
@@ -150,7 +150,7 @@ const AppHeader = memo(() => {
             dispatch(appActions.renderWidget());
           }}
         >
-          {t("Bathtub.Header.Render")}
+          {t("Playground.Header.Render")}
         </Button>
       </Row>
     </HeaderWrapper>
