@@ -11,7 +11,7 @@
 // } from 'src/types/widgets/shared/filterBar';
 
 // const logOptions = {
-//   appName: '@1fe/bathtub',
+//   appName: '@1fe/playground',
 //   accountId: '',
 // };
 

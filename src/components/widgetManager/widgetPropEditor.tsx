@@ -41,7 +41,7 @@ const WidgetPropEditor = memo(({ trigger }: WidgetPropEditorProps) => {
   // temporarily replacing banner
   useEffect(() => {
     if (hasPropsError) {
-      window.alert(t("Bathtub.PropEditor.ValidationError"));
+      window.alert(t("Playground.PropEditor.ValidationError"));
       dispatch(appActions.clearPropsError());
     }
   }, [hasPropsError, t, dispatch]);
@@ -72,7 +72,7 @@ const WidgetPropEditor = memo(({ trigger }: WidgetPropEditorProps) => {
                 }}
                 data-qa="props-editor-update"
               >
-                {t("Bathtub.PropEditor.Update")}
+                {t("Playground.PropEditor.Update")}
               </Button>
               <Button
                 type="primary"

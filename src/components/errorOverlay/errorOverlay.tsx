@@ -79,17 +79,17 @@ const Fallback: React.FC<
       <Section>
         <Row css={{ alignContent: "center" }}>
           <Column justify="center">
-            <Title data-qa="bathtub.error.type" type="error">
+            <Title data-qa="playground.error.type" type="error">
               {errorData.type}
             </Title>
-            <h2 data-qa="bathtub.error.heading">
-              {t("Bathtub.Renderer.HelpFailedHeader")}
+            <h2 data-qa="playground.error.heading">
+              {t("Playground.Renderer.HelpFailedHeader")}
             </h2>
-            <Text>{t("Bathtub.Renderer.HelpFailed")}</Text>
+            <Text>{t("Playground.Renderer.HelpFailed")}</Text>
           </Column>
           <Hotkeys keyName="cmd+esc" onKeyDown={clean}>
             <Button onClick={clean}>
-              {t("Bathtub.Renderer.HelpFailedAction")}
+              {t("Playground.Renderer.HelpFailedAction")}
             </Button>
           </Hotkeys>
         </Row>
@@ -98,18 +98,18 @@ const Fallback: React.FC<
       <Section>
         <Row css={{ alignContent: "center" }}>
           <Row.Flex flex="1" justify="center">
-            <Title data-qa="bathtub.error.message" type="error">
+            <Title data-qa="playground.error.message" type="error">
               {errorData.message}
             </Title>
-            <Title data-qa="bathtub.error.location" type="info">
-              {t("Bathtub.Renderer.HelpFailureLocation", {
+            <Title data-qa="playground.error.location" type="info">
+              {t("Playground.Renderer.HelpFailureLocation", {
                 WIDGET: errorData.widget,
                 LOCATION: errorData.location,
               })}
             </Title>
           </Row.Flex>
           <a href={`${errorData.file}`} target="_blank" rel="noreferrer">
-            {t("Bathtub.Renderer.HelpFailureOpenFile")}
+            {t("Playground.Renderer.HelpFailureOpenFile")}
           </a>
           {/* <Box>Open in editor: {errorData.file}</Box> */}
         </Row>
@@ -117,8 +117,8 @@ const Fallback: React.FC<
 
       <Column.Flex flex="1">
         <Section>
-          <h3 data-qa="bathtub.error.stackHeading">
-            {t("Bathtub.Renderer.HelpFailureStackTrace")}
+          <h3 data-qa="playground.error.stackHeading">
+            {t("Playground.Renderer.HelpFailureStackTrace")}
           </h3>
           <Pre>{errorData.stack}</Pre>
         </Section>

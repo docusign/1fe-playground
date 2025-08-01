@@ -25,7 +25,7 @@
 
 //   return (
 //     <a
-//       //   accessibilityText={t('WidgetBrowser.Links.Bathtub', {
+//       //   accessibilityText={t('WidgetBrowser.Links.Playground', {
 //       //     widget_name: widget.widgetId,
 //       //   })}
 //       onClick={() => {

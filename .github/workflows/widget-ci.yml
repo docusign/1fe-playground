@@ -21,8 +21,6 @@ jobs:
     with:
       node-version: ${{ github.event.inputs.node_version_override || '22' }}
     secrets:
-      PRIVATE_KEY_FOR_1FE: ${{ secrets.SSH_PRIVATE_1FE }}
-      PRIVATE_KEY_FOR_WIDGET_BASE_CONFIG: ${{ secrets.SSH_PRIVATE_BASE_CONFIG }}
       AKAMAI_NS_SSH_PRIVATE_KEY: ${{ secrets.AKAMAI_NS_SSH_PRIVATE_KEY }}
       AZURE_APP_CONFIG_CONNECTION_STRING: ${{ secrets.AZURE_APP_CONFIG_CONNECTION_STRING }}
       NPM_TOKEN_READONLY: ${{ secrets.NPM_TOKEN_READONLY_1FE }}

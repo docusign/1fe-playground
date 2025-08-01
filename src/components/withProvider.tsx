@@ -21,7 +21,7 @@ const Wrapper = styled(Box)`
 const withProvider = (Component: React.FC<WidgetProps>) =>
   function WidgetProvider(props: WidgetProps) {
     return (
-      <Wrapper data-qa="bathtub.provider">
+      <Wrapper data-qa="playground.provider">
         <Provider store={store}>
           <Component {...props} />
         </Provider>
