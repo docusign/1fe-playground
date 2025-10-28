@@ -65,6 +65,7 @@
 import { Table, Typography } from "antd";
 import { useAppSelector } from "../../store";
 import { widgetBrowserSelectors } from "../../store/widgetBrowser";
+import { Link } from "react-router-dom";
 
 export function WidgetBrowser() {
   const widgets = useAppSelector(widgetBrowserSelectors.selectFilteredWidgets);
@@ -79,6 +80,7 @@ export function WidgetBrowser() {
       title: "Route",
       dataIndex: ["plugin", "route"],
       key: "route",
+      render: (route: string) => (route ? <Link to={route}>{route}</Link> : route),
     },
     {
       title: "Version",
